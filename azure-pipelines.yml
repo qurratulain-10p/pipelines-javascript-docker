@@ -14,7 +14,7 @@ variables:
   imageRepository: 'quratpipelineimage'
   containerRegistry: 'qurrattestregistry.azurecr.io'
   username:           'qurrattestregistry'
-  containerPassword:  $(containerpassword)
+  containerPassword:  $(acpassword)
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
 
