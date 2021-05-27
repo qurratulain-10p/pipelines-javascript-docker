@@ -14,7 +14,7 @@ variables:
   imageRepository: 'quratpipelineimage'
   containerRegistry: 'qurrattestregistry.azurecr.io'
   username:           'qurrattestregistry'
-  containerPassword:  $(acpassword)
+  containerPassword:  $(acrpassword)
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
 
@@ -37,5 +37,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
+        username: $(username)
+        password: $(containerPassword)
         tags: |
           $(tag)
